@@ -1,0 +1,40 @@
+GET http://localhost:3001/todos/650061a512a95344b2d64e86
+
+###
+
+GET http://localhost:3001/todos/update/650067613402bbfe6bc22965
+Content-Type: application/json
+
+{
+    "text": "Wash CLothes"
+}
+###
+GET http://localhost:3001/todos/update/650067613402bbfe6bc229654
+###
+POST http://localhost:3001/todos/new
+Content-Type: application/json
+
+{
+    "text": "Pet Cats"
+}
+
+###
+
+DELETE http://localhost:3001/todos/delete/64fdee8b25387d2245f42a94
+
+###
+
+PUT http://localhost:3001/todos/complete/64fdf4f03ba249f546350505
+
+####
+
+GET http://localhost:3001/lists
+
+###
+
+POST http://localhost:3001/lists/new
+Content-Type: application/json
+
+{
+    "text": "Stuff"
+}
