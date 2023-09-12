@@ -26,8 +26,6 @@ export default function TodoList() {
     }, [currentId]);
 
     const getTodos = async () => {
-        //console.log(currentId);
-        //console.log("HERE " + APIs.GET_TODOS + currentId);
         await fetch(APIs.GET_TODOS + currentId)
             .then(res => res.json())
             .then((data) => {
@@ -76,8 +74,6 @@ export default function TodoList() {
 
     const dialogResponse = async (didEdit, text) => {
         dialogStateEdit.close();
-        console.log(editId + " " + didEdit + " " + text);
-        console.log(APIs.EDIT_TODO + editId)
         if (didEdit) {
             const data = await fetch(APIs.EDIT_TODO + editId, {
                 method: "PATCH",
@@ -99,10 +95,6 @@ export default function TodoList() {
                     }
                 })
             })
-
-            console.log(data);
-            console.log(editId);
-
         } else {
             console.log("CANCELED")
         }

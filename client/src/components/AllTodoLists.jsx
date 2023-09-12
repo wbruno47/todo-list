@@ -34,7 +34,6 @@ export function AllTodoLists() {
 
 
     const removeTodo = async (id) => {
-        console.log("remove: " + id);
         const data = await fetch(APIs.REMOVE_ALL_TODO_ITEM + id, {
             method: 'delete'
         }).then(res => res.json());
@@ -74,10 +73,7 @@ export function AllTodoLists() {
                                     </IconButton>
                                 } disablePadding>
                                 <ListItemButton
-                                    onClick={() => {
-                                        console.log(listItem._id);
-                                        setCurrentId(listItem._id);
-                                    }}
+                                    onClick={() => { setCurrentId(listItem._id); }}
                                 // selected={currentList === id}
                                 >
                                     {/* {Icon ? <Icon /> : <Icons.List />} */}

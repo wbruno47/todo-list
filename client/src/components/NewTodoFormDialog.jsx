@@ -16,7 +16,6 @@ export default function NewTodoFormDialog({ dialogState, todos, setTodos, title,
     //const { todos, setTodos } = useAppState();
 
     const getData = async () => {
-        console.log("currentId: " + currentId);
         if (APIURL === APIs.NEW_TODO) {
             return await fetch(APIURL, {
                 method: "POST",
@@ -40,18 +39,14 @@ export default function NewTodoFormDialog({ dialogState, todos, setTodos, title,
             }).then(res => res.json());
         }
     }
+
     const newItemText = async () => {
-        console.log(APIURL);
         const data = await getData();
         dialogState.close();
         setTodos(prevTodos => {
             return [...prevTodos, data]
         })
         setState('');
-        // console.log(data);
-        // console.log("ADD NEW: " + title);
-        // console.log(data);
-
     }
 
     return (
@@ -59,7 +54,6 @@ export default function NewTodoFormDialog({ dialogState, todos, setTodos, title,
             <DialogTitle>{title}</DialogTitle>
             <DialogContent>
                 <TextField
-
                     onChange={event => {
                         setState(event.target.value);
                     }}
